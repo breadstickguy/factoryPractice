@@ -9,6 +9,7 @@ let animal = {
 			${this.legs} legs, and a ${this.tail} tail.`;
 		}
 };
+console.log('animal \n',animal);
 
 /* By using .assign, we can copy the enumerable properites of an object. 
  * Official docs for Object.assign() => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
@@ -31,7 +32,7 @@ let mouseFactory = () => {
 
 // Since our factory returns an object,
 let mickey = mouseFactory();
-console.log(mickey);
+console.log('mickey \n',mickey);
 console.log(mickey.describe());
 
 
@@ -45,11 +46,11 @@ let birdFactory = (f = 'feathery') => {
 	};
 
 let tweety = birdFactory();
-console.log(tweety);
+console.log('tweety \n',tweety);
 console.log(tweety.describe());
 
 let bluebird = birdFactory('blue');
-console.log(bluebird);
+console.log('bluebird \n', bluebird);
 console.log(bluebird.describe());
 
 
