@@ -2,11 +2,10 @@
 
 //This is our "base" object. It is an object literal
 //and by itself, doesn't return anything. I just defines an object
-let animal = {
+const animal = {
 		animalType: 'animal',
   		describe () {
-			return `A ${this.animalType}, with ${this.furColor} fur, 
-			${this.legs} legs, and a ${this.tail} tail.`;
+			return `A ${this.animalType}, with ${this.furColor} fur, ${this.legs} legs, and a ${this.tail} tail.`;
 		}
 };
 console.log('animal \n',animal);
@@ -21,40 +20,34 @@ console.log('animal \n',animal);
  * for the object we want. Since we are using assign, we copy the properties on the 
  * animal object
  */
-let mouseFactory = () => { 
+const mouseFactory = (f, t) => { 
 	return Object.assign(Object.create(animal), {
 		animalType: 'mouse',
-		furColor: 'brown',
+		furColor: f,
 		legs: 4,
-		tail: 'long, skinny'
+		tail: t
 	});
 };
 
 // Since our factory returns an object,
-let mickey = mouseFactory();
+const mickey = mouseFactory('brown', 'long, skinny');
 console.log('mickey \n',mickey);
 console.log(mickey.describe());
 
 
-let birdFactory = (f = 'feathery') => {
+const birdFactory = (f = 'feathery', t = 'long, feathery') => {
 		return Object.assign(Object.create(animal),{
 			animalType: 'bird',
 			furColor: f,
 			legs: 2,
-			tail: 'long, feathery'
+			tail: t
 		});
 	};
 
-let tweety = birdFactory();
+const tweety = birdFactory();
 console.log('tweety \n',tweety);
 console.log(tweety.describe());
 
-let bluebird = birdFactory('blue');
+const bluebird = birdFactory('blue');
 console.log('bluebird \n', bluebird);
 console.log(bluebird.describe());
-
-
-
-
-// console.log(mouse.describe());
-// console.log(bluebird.describe());
